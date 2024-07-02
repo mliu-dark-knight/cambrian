@@ -95,7 +95,13 @@ class ModelWorker:
         self.model_path = os.path.expanduser(model_path)
         self.model_name = get_model_name_from_path(model_path)
         self.tokenizer, self.model, self.image_processor, self.context_len = (
-            load_pretrained_model(model_path, None, self.model_name, load_8bit=load_8bit, load_4bit=load_4bit)
+            load_pretrained_model(
+                model_path,
+                None,
+                self.model_name,
+                load_8bit=load_8bit,
+                load_4bit=load_4bit,
+            )
         )
         self.temperature = 0
 
